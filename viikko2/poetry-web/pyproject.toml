@@ -3,15 +3,21 @@ name = "poetry-web"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "shadowlegend551",email = "oskari.j.lappalainen@gmail.com"}
+    {name = "Oskari Lappalainen",email = "oskari.j.lappalainen@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = "^3.12"
 dependencies = [
+    "pytest (>=9.0.0,<10.0.0)",
+    "sqlalchemy (==1.4.54)",
+    "fastapi (>=0.121.1,<0.122.0)",
 ]
 
-[tool.poetry]
-packages = [{include = "poetry_web", from = "src"}]
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.0,<10.0.0)"
+]
+
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
